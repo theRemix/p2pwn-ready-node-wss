@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "env (cat .env | xargs) node ."
+    "start": "env $(cat .env | xargs) node ."
   },
 	"dependencies": {
 		"localtunnel": "^1.9.1",
