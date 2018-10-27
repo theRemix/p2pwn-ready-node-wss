@@ -22,7 +22,7 @@ const tunnel = localtunnel(PORT, (err, { url }) => {
 
   console.log(`Tunnel created at: ${url}`);
   rp({
-    uri: `${P2PWN}/connect`,
+    uri: `${P2PWN}/api/connect`,
     method: 'POST',
     body: {
       appName,
@@ -37,7 +37,7 @@ const tunnel = localtunnel(PORT, (err, { url }) => {
 tunnel.on('close', function() {
   console.log('Tunnel closed!');
   rp({
-    uri: `${P2PWN}/host/${p2pwn.id}/disconnect`,
+    uri: `${P2PWN}/api/host/${p2pwn.id}/disconnect`,
     method: 'POST',
     headers: {
       Authorization: `Bearer ${p2pwn.access_token}`
